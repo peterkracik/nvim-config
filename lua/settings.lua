@@ -1,3 +1,5 @@
+vim.notify = require("notify")
+
 vim.opt.tags=tags
 -- syntax on
 vim.opt.redrawtime = 10000

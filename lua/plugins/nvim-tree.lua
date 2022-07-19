@@ -8,7 +8,7 @@ require('nvim-tree').setup({
       }
     }
   },
-  auto_close = true,
+  -- auto_close = true,
   renderer = {
     group_empty = true,
   },
@@ -16,6 +16,11 @@ require('nvim-tree').setup({
     dotfiles = false,
     custom = {
       "^.git$"
+    }
+  },
+  actions = {
+    open_file = {
+      quit_on_open = true
     }
   }
 })

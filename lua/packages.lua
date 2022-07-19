@@ -11,9 +11,6 @@ return packer.startup(function()
   use 'EdenEast/nightfox.nvim'
   use 'sainnhe/edge'
 
-  -- comments
-  -- use 'terrortylor/nvim-coment'
-
   -- surround
   use 'kylechui/nvim-surround'
 
@@ -31,14 +28,44 @@ return packer.startup(function()
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  -- notify
+  use 'rcarriga/nvim-notify'
+
+  -- which-key
+  use 'folke/which-key.nvim'
+
   -- lsp
-  use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+  use { 'neovim/nvim-lspconfig',
+    opt = true,
+    event = "BufReadPre",
+    wants = { "nvim-lsp-installer" },
+    config = function()
+      require("plugins.lsp").setup()
+    end,
+   requires = {
+      "williamboman/nvim-lsp-installer",
+    },
+  }
 
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/nvim-cmp'
 
   -- vim-fugitive
-  use 'tpope/vim-fugitive'
+  use {'tpope/vim-fugitive',
+  opt = true,
+    cmd = {
+      "G", "Git", "Gdiffsplit", "Gvdiffsplit", "Gedit", "Gsplit",
+      "Gread", "Gwrite", "Ggrep", "Glgrep", "Gmove",
+      "Gdelete", "Gremove", "Gbrowse",
+    },
+  }
+
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+}
 end)
 
