@@ -75,9 +75,9 @@ local opts = { noremap = true, silent = true }
       i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Implementation" },
       t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Type definition" },
       r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-      f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Formatting" },
     },
     K = { "<cmd>lua vim.diagnostic.open_float()<CR>", 'View diagnostic' },
+    F = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Formatting" },
   })
 
 -- end
