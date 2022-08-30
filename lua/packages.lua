@@ -10,6 +10,7 @@ return packer.startup(function()
   -- theme
   use 'EdenEast/nightfox.nvim'
   use 'sainnhe/edge'
+  use 'sainnhe/sonokai'
 
   -- surround
   use 'kylechui/nvim-surround'
@@ -66,6 +67,12 @@ return packer.startup(function()
     config = function()
         require('Comment').setup()
     end
-}
+  }
+
+  -- floating terminal
+  use 'voldikss/vim-floaterm'
+
+  -- dev container
+  use 'jamestthompson3/nvim-remote-containers'
 end)
 

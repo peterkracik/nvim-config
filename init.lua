@@ -5,4 +5,5 @@ require('settings')
 
 require('mappings')
 
+-- require('themes.sonokai')
 require('themes.edge')

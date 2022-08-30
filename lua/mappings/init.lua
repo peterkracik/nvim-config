@@ -7,17 +7,11 @@ vim.g.mapleader = ' '
 -- basic
 wk.register({
   ["Y"] = { 'y$', 'Copy to the end of line' },
-  ["<S-C-p>"] = { '"0p', 'Copy to clipboard' },
-  ["d"] = { '"_d', 'Delete witout yanking' },
+  ["<S-C-d>"] = { '"0p', 'Copy to clipboard' },
+  ["<leader>d"] = { '"_d', 'Delete witout yanking' },
   ["x"] = { '"_x', 'Delete character witout yanking' },
-  ["<S>"] = {
-    -- search
-    h = { ':%s//gc<left><left><left>', 'Search and replace' },
-  },
-  ["<C>"] = {
-    -- select all
-    a = { "gg<S-v>G", 'Select all' },
-  }
+  ["H"] = { ':%s//gc<left><left><left>', 'Search and replace' },
+  ["<C-a>"] ={ "gg<S-v>G", 'Select all' },
 })
 
 -- moving text
@@ -71,3 +65,40 @@ wk.register({
 
 -- lsp - loaded inside the plugin
 require('mappings.lsp')
+
+
+-- floaterm
+wk.register({
+  t = {
+    name = "+Terminal",
+    [";"] = { ":FloatermNew --wintype=popup --height=6 <CR>", "New terminal" },
+    t = { ":FloatermToggle <CR>", "Terminal" },
+    g = { ":FloatermNew lazygit <CR>", "git" },
+    r = { ":FloatermNew ranger <CR>", "ranger" },
+    h = { ":FloatermHide <CR>", "Hide terminal" },
+  }
+})
+
+-- Devcontainer
+-- wk.register({
+--   d = {
+--     name = "+Devcontainer",
+--     a = { ":AttachToContainer <CR>", "Attach to container" }, 
+--     b = { ":BuildImage true<CR>", "Build Image" },
+--     s = { ":StartImage <CR>", "Start Image" },
+--     u = { ":ComposeUp <CR>", "Compose up" },
+--     q = { ":ComposeDown <CR>", "Compose down" },
+--     r = { ":ComposeDestroy <CR>", "Compose destroy" },
+--   }
+-- }, { prefix = "<leader>" })
+
+-- NvimTree
+-- nt_api = require("nvim-tree.api")
+-- wk.register({
+--   m = {
+--     name = "+NvimTree Bookmarks",
+--     n = {nt_api.marks.navigate.next, "Next bookmark" },
+--     p = {nt_api.marks.navigate.prev, "Previous bookmark" },
+--     s = {nt_api.marks.navigate.select, "Select bookmark" },
+--   } 
+-- }, {prefix = "<leader>"})
