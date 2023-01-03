@@ -9,4 +9,6 @@ require('plugins.lsp')
 require('plugins.comment')
 require('plugins.which-key')
 require('plugins.floaterm')
+require('plugins.treesitter-context')
+require('plugins.shade')
 

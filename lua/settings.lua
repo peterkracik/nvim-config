@@ -30,4 +30,4 @@ vim.opt.modifiable = true
 vim.wo.fillchars = "eob: "
 vim.opt.cmdheight = 1
 vim.opt.mouse=a
-
+vim.o.cmdheight=0

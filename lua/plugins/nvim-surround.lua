@@ -1,7 +1,7 @@
 require("nvim-surround").setup({
-    delimiters = {
+    surround = {
     },
-    highlight_motion = { -- Disables highlights
+    highlight = { -- Disables highlights
         duration = false,
     },
 })

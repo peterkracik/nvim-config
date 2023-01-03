@@ -74,5 +74,12 @@ return packer.startup(function()
 
   -- dev container
   use 'jamestthompson3/nvim-remote-containers'
+
+  -- treesitter for sticky headers
+  use 'nvim-treesitter/nvim-treesitter'
+  use 'nvim-treesitter/nvim-treesitter-context'
+
+  -- dim inactive views
+  use 'sunjon/shade.nvim'
 end)
 

@@ -1,15 +1,35 @@
 local M = {}
 
 local servers = {
+  intelephense = {
+    licenseKey = "00DOBHIL5XEZYTK",
+    capabilities = capabilities,
+    settings = {
+      intelephense = {
+        telemetry = {
+          enabled = false,
+        },
+        completion = {
+          fullyQualifyGlobalConstantsAndFunctions = false
+        },
+        phpdoc = {
+          returnVoid = false,
+        }
+      },
+    },
+    init_options =  {
+      licenseKey = "00DOBHIL5XEZYTK"
+    }
+  },
   -- gopls = {},
   html = {},
   jsonls = {},
   -- pyright = {},
-  -- rust_analyzer = {},
+  rust_analyzer = {},
   -- sumneko_lua = {},
   tsserver = {},
-  vimls = {},
-  -- php = {}
+  vimls = {}
+  -- yaml = {}
 }
 
 local function on_attach(client, bufnr)

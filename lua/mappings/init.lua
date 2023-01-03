@@ -6,13 +6,20 @@ vim.g.mapleader = ' '
 
 -- basic
 wk.register({
+  ["<leader>"] = {
+    p = { "\"_dP", 'Paste without putting to register' },
+    d = { "\"_d", 'Delete witout yanking' },
+  },
   ["Y"] = { 'y$', 'Copy to the end of line' },
+  -- ["<leader>p"] = { '"_dP', 'Paste without putting to register' },
   ["<S-C-d>"] = { '"0p', 'Copy to clipboard' },
-  ["<leader>d"] = { '"_d', 'Delete witout yanking' },
+  -- ["<leader>d"] = { '"_d', 'Delete witout yanking' },
   ["x"] = { '"_x', 'Delete character witout yanking' },
   ["H"] = { ':%s//gc<left><left><left>', 'Search and replace' },
   ["<C-a>"] ={ "gg<S-v>G", 'Select all' },
 })
+
+-- test1 test1 test2 
 
 -- moving text
 wk.register({
